@@ -1,0 +1,199 @@
+.addeducate-cont {
+  padding-top: 20px;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000070;
+
+  transition: all 1s;
+}
+.wigetPop {
+  background-color: white;
+  margin: 50px 15%;
+  padding: 0 5% 30px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.buttonsFAS {
+  display: flex;
+}
+.buttonsFAS input[type="button"] {
+  border-radius: 40px;
+  border: none;
+  padding: 10px 50px;
+  color: #003aaa;
+  background-color: #ededed;
+  box-shadow: 4px 3px 12px 2px rgb(0 0 0 / 20%);
+}
+.buttonsFAS input[type="button"]:nth-child(1) {
+  background-color: #003aaa;
+  color: #fff;
+  margin: 0 10px 0 0;
+}
+
+.itemEE p {
+  color: #7d7d7d;
+  margin-bottom: 5px;
+}
+.itemEE input[type="text"] {
+  border: 2px solid #eee;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 100%;
+}
+.itemEE input:focus,
+select:focus {
+  outline: none;
+}
+.ee11,
+.ee12 {
+  display: flex;
+}
+.ee12 {
+  margin: 17px 0;
+}
+.ee11 .itemEE:nth-child(1) {
+  flex-grow: 3;
+}
+.ee11 .itemEE:nth-child(2),
+.itemEE:nth-child(3) {
+  flex-grow: 1;
+}
+
+.itemEE {
+  margin: 0 7px;
+}
+form {
+  width: 100%;
+}
+.itemEE select {
+  padding: 10px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+
+  font-size: smaller;
+  width: 100%;
+}
+
+.itemEE input[type="datetime-local"] {
+  width: 100%;
+  padding: 6px;
+  display: flex;
+  flex-direction: row-reverse;
+
+  border: 2px solid #eee;
+  border-radius: 5px;
+
+  font-size: 15px;
+}
+.nDi {
+  width: 90px;
+  height: 90px;
+  font-size: 13px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #7d7d7d;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+.see1 {
+  display: flex;
+  align-items: flex-end;
+}
+.ee1 {
+  flex-grow: 1;
+}
+.checkboxd {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container {
+  margin: 0 5px 0 10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background: #eee;
+  border-radius: 7px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 1px 1px rgba(0, 5);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-image: linear-gradient(#255cd2, #1d52c1);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 0.45em;
+  top: 0.2em;
+  width: 0.24em;
+  height: 0.6em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+.Description {
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 900px) {
+  .wigetPop {
+    margin: 50px 5%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .ee11,
+  .ee12 {
+    flex-direction: column;
+  }
+  .see1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .ee1 {
+    width: 100%;
+  }
+  .itemEE {
+    margin: 10px 0;
+  }
+  .ee11 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+  }
+  .ee11 .itemEE:nth-child(1) {
+    grid-column: 1/3;
+  }
+}

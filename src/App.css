@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "iransans";
 }
 html {
   font-size: 10px;
@@ -23,13 +24,19 @@ input {
   font-family: "iransans";
   box-sizing: border-box;
 }
+option {
+  font-size: 14px;
+}
+select {
+  font-size: 12px;
+}
 @font-face {
   font-family: "iransans";
   font-weight: 400;
-  src: url("./assets/fonts/IRANSans-Medium-web.woff");
+  src: url("./Components/assets/fonts/IRANSans-Medium-web.woff");
 }
 @font-face {
   font-family: "iransans";
   font-weight: 200;
-  src: url("./assets/fonts/IRANSans-Light-web.woff");
+  src: url("./Components/assets/fonts/IRANSans-Light-web.woff");
 }
