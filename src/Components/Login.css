@@ -1,0 +1,144 @@
+.login-cont {
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+:root {
+  --main-blue-background: #f0f5ff;
+  --main-blue-text: #003aaa;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.grid {
+  display: grid;
+}
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+.margin-10 {
+  margin: 1rem;
+}
+.margin-20 {
+  margin: 2rem;
+}
+.margin-top-10 {
+  margin-top: 1rem;
+}
+.margin-bottom-10 {
+  margin-bottom: 1rem;
+}
+
+.page {
+  background: var(--main-blue-background);
+  width: 100vw;
+  height: 100vh;
+}
+.login-container {
+  width: 90%;
+  height: 60%;
+  background: white;
+  border-radius: 53px;
+  max-width: 85rem;
+  z-index: 1;
+}
+.logo-container {
+  width: 50%;
+  margin: 5rem auto;
+  text-align: center;
+}
+.login-container img {
+  width: 65%;
+  margin: 0 auto;
+}
+.login-container p {
+  font-size: 1.2rem;
+  color: var(--main-blue-text);
+}
+.login-container p:nth-child(2) {
+  letter-spacing: 0.25rem;
+}
+.login-container p:nth-child(3) {
+  font-size: 0.9rem;
+}
+.form-container {
+  width: 60%;
+  margin: 0 auto;
+}
+.form-container input {
+  width: 100%;
+  background: #ededed;
+  border: 0;
+  height: 3rem;
+  border-radius: 5.3rem;
+  padding-right: 3rem;
+}
+input::-moz-placeholder {
+  font-family: "iransans";
+}
+input::-webkit-input-placeholder {
+  font-family: "iransans";
+  font-size: 1rem;
+  color: #00000066;
+}
+.login-input {
+  margin-bottom: 1rem;
+}
+.login-btn {
+  width: 100%;
+  border-radius: 5.3rem;
+  border: 0;
+  background: var(--main-blue-text);
+  color: white;
+  font-family: "iransans";
+  font-weight: 200;
+  height: 3rem;
+}
+.right-square-container {
+  position: absolute;
+  top: -3rem;
+  right: -8rem;
+}
+.right-square-container.userinfo {
+  position: fixed;
+}
+.left-square-container.userinfo {
+  position: fixed;
+}
+.left-square-container {
+  overflow: hidden;
+  position: absolute;
+  bottom: -3rem;
+  left: -5rem;
+}
+
+@media only screen and (min-width: 550px) {
+  .login-container {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo-container {
+    flex-grow: 1;
+  }
+  .logo-container img {
+    max-width: 20rem;
+  }
+  .form-container {
+    flex-grow: 1;
+    width: 50%;
+  }
+  .form-container-inner {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 25rem;
+  }
+}
