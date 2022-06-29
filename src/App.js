@@ -8,7 +8,7 @@ import Addeducate from "./Components/Addeducate";
 function App() {
   return (
     <React.Fragment>
-      <Addeducate />
+      <UserInfo />
     </React.Fragment>
   );
 }

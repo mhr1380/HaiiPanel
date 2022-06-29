@@ -1,0 +1,108 @@
+.wigetPop {
+  background-color: white;
+  margin: 50px 15%;
+  padding: 0 5% 30px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85%;
+  overflow-y: auto;
+  position: relative;
+}
+.wigetPop::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.wigetPop::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.wigetPop::-webkit-scrollbar-track {
+  background: transparent;
+}
+.headerEditInfo {
+  background-color: #f1f5ff;
+  border-radius: 0 0 40px 40px;
+  padding: 20px;
+  width: 70%;
+  max-width: 600px;
+  text-align: center;
+  color: #2452af;
+  margin-bottom: 30px;
+}
+.divInfo {
+  z-index: 20;
+  padding-top: 20px;
+  width: 100% !important;
+  height: 100vh;
+  background-color: #00000070;
+  position: fixed;
+  transition: all 1s;
+}
+.gridEditInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+.itemGridEditInfo p {
+  color: #7d7d7d;
+}
+.itemGridEditInfo input {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin: 5px 0;
+  font-size: 15px;
+}
+.itemGridEditInfo input:focus {
+  outline: none;
+}
+.itemGridEditInfoAddress {
+  grid-column: 1/3;
+}
+.itemGridEditInfo select {
+  border: 2px solid #eee;
+  width: -webkit-fill-available;
+  margin: 5px 0;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.itemGridEditInfo select:focus {
+  outline: none;
+}
+.buttonsEditInfo {
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+.buttonsEditInfo input[type="button"] {
+  border-radius: 40px;
+  border: none;
+  padding: 10px 50px;
+  color: #003aaa;
+  background-color: #ededed;
+  box-shadow: 4px 3px 12px 2px rgb(0 0 0 / 20%);
+}
+.buttonsEditInfo input[type="button"]:nth-child(1) {
+  background-color: #003aaa;
+  color: #fff;
+  margin: 0 10px 0 0;
+}
+@media screen and (max-width: 750px) {
+  .wigetPop {
+    margin: 50px 3%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .itemGridEditInfo {
+    grid-column: 1/3;
+  }
+}

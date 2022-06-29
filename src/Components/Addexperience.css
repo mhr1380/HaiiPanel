@@ -1,4 +1,4 @@
-header {
+.has {
   background-color: #f1f5ff;
   border-radius: 0 0 40px 40px;
   padding: 15px;
@@ -10,11 +10,13 @@ header {
 }
 .addex-cont {
   padding-top: 20px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #00000070;
-  transition: all 1s;
+  /* transition: all 0.3s; */
   display: block;
+  position: fixed;
+  z-index: 10;
 }
 .wigetPop {
   background-color: white;

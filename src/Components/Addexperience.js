@@ -1,32 +1,32 @@
 import React from "react";
 import "./Addexperience.css";
-const Addexperience = () => {
+const Addexperience = (props) => {
   return (
     <React.Fragment>
       <div className="addex-cont">
-        <div class="wigetPop" id="addExperience" dir="rtl">
-          <header class="has">
+        <div className="wigetPop" id="addExperience" dir="rtl">
+          <header className="has">
             <p>افزودن تجربه جدید</p>
           </header>
           <form action="">
-            <div class="eDA">
-              <div class="eD1 eD">
+            <div className="eDA">
+              <div className="eD1 eD">
                 <p>عنوان(مثال : طراح گرافیک)</p>
                 <input type="text" />
               </div>
-              <div class="eD2 eD">
+              <div className="eD2 eD">
                 <p>نام شرکت</p>
                 <input type="text" />
               </div>
-              <div class="nDi">
+              <div className="nDi">
                 <p>اضافه کردن لوگوی شرکت</p>
               </div>
             </div>
-            <div class="eTA">
-              <div class="eT1 eT">
+            <div className="eTA">
+              <div className="eT1 eT">
                 <p>از تاریخ</p>
-                <div class="spET">
-                  <select class="mah">
+                <div className="spET">
+                  <select className="mah">
                     <option>فروردین</option>
                     <option>اردیبهشت</option>
                     <option>خرداد</option>
@@ -40,7 +40,7 @@ const Addexperience = () => {
                     <option>بهمن</option>
                     <option>اسفند</option>
                   </select>
-                  <select class="sal">
+                  <select className="sal">
                     <option>1401</option>
                     <option>1400</option>
                     <option>1399</option>
@@ -56,10 +56,10 @@ const Addexperience = () => {
                   </select>
                 </div>
               </div>
-              <div class="eT2 eT">
+              <div className="eT2 eT">
                 <p>تا تاریخ</p>
-                <div class="spET">
-                  <select class="mah">
+                <div className="spET">
+                  <select className="mah">
                     <option>فروردین</option>
                     <option>اردیبهشت</option>
                     <option>خرداد</option>
@@ -73,7 +73,7 @@ const Addexperience = () => {
                     <option>بهمن</option>
                     <option>اسفند</option>
                   </select>
-                  <select class="sal">
+                  <select className="sal">
                     <option>1401</option>
                     <option>1400</option>
                     <option>1399</option>
@@ -89,15 +89,21 @@ const Addexperience = () => {
                   </select>
                 </div>
               </div>
-              <div class="fkh"></div>
+              <div className="fkh"></div>
             </div>
-            <div class="eTAA">
+            <div className="eTAA">
               <p>توضیحات</p>
-              <textarea class="eTAAT"></textarea>
+              <textarea className="eTAAT"></textarea>
             </div>
-            <div class="buttonsFAS bFASAE" dir="ltr">
+            <div className="buttonsFAS bFASAE" dir="ltr">
               <input type="button" value="ذخیره" />
-              <input type="button" value="انصراف" onclick="cancelPop();" />
+              <input
+                type="button"
+                value="انصراف"
+                onClick={() => {
+                  props.cancel(false);
+                }}
+              />
             </div>
           </form>
         </div>

@@ -1,24 +1,24 @@
 import React from "react";
 import "./Addeducate.css";
-const Addeducate = () => {
+const Addeducate = (props) => {
   return (
     <React.Fragment>
       <div className="addeducate-cont">
-        <div class="wigetPop" id="addExperience" dir="rtl">
-          <header class="has">
+        <div className="wigetPop" id="addExperience" dir="rtl">
+          <header className="has">
             <p>افزودن سابقه تحصیلی جدید</p>
           </header>
-          <form action="">
-            <section class="see1">
-              <div class="ee1">
-                <div class="ee11">
-                  <div class="itemEE">
+          <form>
+            <section className="see1">
+              <div className="ee1">
+                <div className="ee11">
+                  <div className="itemEE">
                     <p>رشته تحصیلی</p>
                     <input type="text" />
                   </div>
-                  <div class="itemEE">
+                  <div className="itemEE">
                     <p>مقطع تحصیلی</p>
-                    <select name="" id="" class="iEEs">
+                    <select name="" id="" className="iEEs">
                       <option>درحال تحصیل</option>
                       <option>دیپلم</option>
                       <option>لیسانس</option>
@@ -26,45 +26,51 @@ const Addeducate = () => {
                       <option>دکترا</option>
                     </select>
                   </div>
-                  <div class="itemEE">
+                  <div className="itemEE">
                     <p>معدل</p>
                     <input type="text" />
                   </div>
                 </div>
 
-                <div class="ee12">
-                  <div class="itemEE">
+                <div className="ee12">
+                  <div className="itemEE">
                     <p>از تاریخ</p>
                     <input type="datetime-local" />
                   </div>
-                  <div class="itemEE">
+                  <div className="itemEE">
                     <p>تا تاریخ</p>
                     <input type="datetime-local" value="" />
                   </div>
-                  <div class="itemEE">
+                  <div className="itemEE">
                     <p>نام موسسه آموزشی</p>
                     <input type="text" />
                   </div>
                 </div>
               </div>
-              <div class="nDi">
+              <div className="nDi">
                 <p>اضافه کردن لوگوی شرکت</p>
               </div>
             </section>
-            <div class="checkboxd">
-              <label class="checkbox-container">
+            <div className="checkboxd">
+              <label className="checkbox-container">
                 <input type="checkbox" />
-                <div class="checkmark"></div>
+                <div className="checkmark"></div>
               </label>
               <p>همچنان مشغول تحصیل هستم</p>
             </div>
-            <div class="itemEE Description">
+            <div className="itemEE Description">
               <p>توصیحات</p>
               <input type="text" />
             </div>
-            <div class="buttonsFAS bFASAE" dir="ltr">
+            <div className="buttonsFAS bFASAE" dir="ltr">
               <input type="button" value="ذخیره" />
-              <input type="button" value="انصراف" onclick="cancelPop();" />
+              <input
+                type="button"
+                value="انصراف"
+                onClick={() => {
+                  props.cancel(false);
+                }}
+              />
             </div>
           </form>
         </div>
