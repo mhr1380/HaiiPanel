@@ -1,0 +1,89 @@
+.editSkill-cont {
+  padding-top: 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000070;
+  /* transition: all 0.3s; */
+  display: block;
+  position: fixed;
+  z-index: 10;
+}
+.editSkill {
+  background-color: white;
+  margin: 10px 15%;
+  padding: 0 5% 30px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headerEditSkill {
+  background-color: #f1f5ff;
+  border-radius: 0 0 40px 40px;
+  padding: 20px;
+  width: 70%;
+  max-width: 600px;
+  text-align: center;
+  color: #2452af;
+  margin-bottom: 30px;
+}
+.formEditSkill {
+  width: 100%;
+}
+.formEditSkill p {
+  color: #7d7d7d;
+  margin-bottom: 5px;
+}
+.editSkill .formEditSkill input[type="text"],
+.editSkill .formEditSkill textarea {
+  border: 2px solid #eee;
+  width: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.editSkill .formEditSkill input[type="text"] {
+  width: 50%;
+}
+.editSkill .formEditSkill input[type="text"]:focus,
+.editSkill .formEditSkill textarea:focus {
+  outline: none;
+}
+.editSkill .formEditSkill textarea {
+  height: 250px !important;
+  width: 100% !important;
+
+  resize: none;
+  margin-bottom: 80px;
+}
+.buttonsFES input[type="button"] {
+  border-radius: 40px;
+  border: none;
+  padding: 10px 50px;
+  background-color: #ededed;
+  box-shadow: 4px 3px 12px 2px rgb(0 0 0 / 20%);
+}
+.buttonsFES input[type="button"]:nth-child(1) {
+  background-color: #003aaa;
+  color: #fff;
+  margin: 0 10px 0 0;
+}
+@media screen and (max-width: 500px) {
+  .editSkill .formES input[type="text"] {
+    width: 100%;
+  }
+  .buttonsFES input[type="button"] {
+    flex-grow: 1;
+    padding: 10px 0px;
+  }
+  .editSkill {
+    margin: 10px 3%;
+  }
+}
+.deleteEditSkill {
+  margin-bottom: 20px;
+  color: #ff0000;
+  text-align: end;
+  display: block;
+}
