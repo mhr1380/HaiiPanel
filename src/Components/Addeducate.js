@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Addeducate.css";
+
 const Addeducate = (props) => {
+  const [title, settitle] = useState("");
+  const [degree, setdegree] = useState("");
   return (
     <React.Fragment>
       <div className="addeducate-cont">
@@ -14,15 +17,30 @@ const Addeducate = (props) => {
                 <div className="ee11">
                   <div className="itemEE">
                     <p>رشته تحصیلی</p>
-                    <input type="text" />
+                    <input
+                      value={title}
+                      onChange={(e) => {
+                        settitle(e.target.value);
+                      }}
+                      type="text"
+                    />
                   </div>
                   <div className="itemEE">
                     <p>مقطع تحصیلی</p>
-                    <select name="" id="" className="iEEs">
+                    <select
+                      value={degree}
+                      onChange={(e) => {
+                        setdegree(e.target.value);
+                      }}
+                      name=""
+                      id=""
+                      className="iEEs"
+                    >
                       <option>درحال تحصیل</option>
                       <option>دیپلم</option>
                       <option>لیسانس</option>
                       <option>کارشناسی</option>
+                      <option>کارشناسی ارشد</option>
                       <option>دکترا</option>
                     </select>
                   </div>
@@ -63,7 +81,13 @@ const Addeducate = (props) => {
               <input type="text" />
             </div>
             <div className="buttonsFAS bFASAE" dir="ltr">
-              <input type="button" value="ذخیره" />
+              <input
+                onClick={() => {
+                  props.add({ title, degree });
+                }}
+                type="button"
+                value="ذخیره"
+              />
               <input
                 type="button"
                 value="انصراف"

@@ -19,6 +19,7 @@ const EditPersonalInfo = (props) => {
   const [livingCity, setlivingCity] = useState(props.userInfo.livingCity);
   const [marialStatus, setmarialStatus] = useState(props.userInfo.marialStatus);
   const [gender, setgender] = useState(props.userInfo.gender);
+
   return (
     <div className="divInfo">
       <div className="wigetPop" id="editInfo" dir="rtl">
@@ -39,63 +40,155 @@ const EditPersonalInfo = (props) => {
           </div>
           <div className="itemGridEditInfo ItemGridEditInfoFamily">
             <p>نام خوانوادگی</p>
-            <input type="text" />
+            <input
+              value={lastName}
+              onChange={(e) => {
+                setlastName(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo ItemGridEditInfoJob">
             <p>عنوان (مثال : طراح گرافیک)</p>
-            <input type="text" />
+            <input
+              value={subject}
+              onChange={(e) => {
+                setsubject(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo ItemGridEditInfoUserName">
             <p>نام کاربری</p>
-            <input type="text" />
+            <input
+              value={userName}
+              onChange={(e) => {
+                setuserName(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo ItemGridEditInfoNationalCode">
             <p>کد ملی</p>
-            <input type="text" />
+            <input
+              value={nationalNumber}
+              onChange={(e) => {
+                setnationalNumber(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo ItemGridEditInfoBirth">
             <p>تاریخ تولد</p>
-            <input type="datetime-local" />
+            <input
+              value={dateOfBirth}
+              onChange={(e) => {
+                setdateOfBirth(e.target.value);
+              }}
+              type="datetime-local"
+            />
           </div>
           <div className="itemGridEditInfo itemGridEditInfoPhoneNumber">
             <p>تلفن همراه</p>
-            <input type="text" />
+            <input
+              value={phoneNumber}
+              onChange={(e) => {
+                setphoneNumber(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo itemGridEditInfoEmail">
             <p>ایمیل</p>
-            <input type="text" />
+            <input
+              value={email}
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo itemGridEditInfoAddress">
             <p>ادرس</p>
-            <input type="text" />
+            <input
+              value={address}
+              onChange={(e) => {
+                setaddress(e.target.value);
+              }}
+              type="text"
+            />
           </div>
           <div className="itemGridEditInfo itemGridEditInfoState">
             <p>استان</p>
-            <select>
+            <select
+              value={livingState}
+              onChange={(e) => {
+                setlivingState(e.target.value);
+              }}
+            >
               <option>قم</option>
             </select>
           </div>
           <div className="itemGridEditInfo itemGridEditInfoCity">
             <p>شهر</p>
-            <select>
+            <select
+              value={livingCity}
+              onChange={(e) => {
+                setlivingCity(e.target.value);
+              }}
+            >
               <option>قم</option>
             </select>
           </div>
           <div className="itemGridEditInfo itemGridEditInfoMaritalStatus">
             <p>وضیعت تاهل</p>
-            <select>
+            <select
+              value={marialStatus}
+              onChange={(e) => {
+                setmarialStatus(e.target.value);
+              }}
+            >
               <option>مجرد</option>
+              <option>متاهل</option>
             </select>
           </div>
           <div className="itemGridEditInfo itemGridEditInfoGender">
             <p>جنسیت</p>
-            <select>
+            <select
+              value={gender}
+              onChange={(e) => {
+                setgender(e.target.value);
+              }}
+            >
               <option>مرد</option>
+              <option>زن</option>
             </select>
           </div>
         </div>
         <div className="buttonsEditInfo" dir="ltr">
-          <input type="button" value="ذخیره" />
+          <input
+            onClick={() => {
+              props.setuserInfo({
+                firstName,
+                lastName,
+                username: props.userInfo.username,
+                password: props.userInfo.password,
+                nationalNumber,
+                dateOfBirth,
+                phoneNumber,
+                email,
+                address,
+                subject,
+                livingState,
+                livingCity,
+                marialStatus,
+                gender,
+              });
+              props.cancel(false);
+            }}
+            type="button"
+            value="ذخیره"
+          />
           <input
             type="button"
             value="انصراف"

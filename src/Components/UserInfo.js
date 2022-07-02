@@ -8,10 +8,68 @@ import LeftRectangle from "./assets/images/leftrec.png";
 import Addexperience from "./Addexperience";
 import Addeducate from "./Addeducate";
 import EditPersonalInfo from "./EditPersonalinfo";
+import ExperienceItem from "./ExperienceItem";
+import EditExperience from "./EditExperience";
+import EducationItem from "./EducationItem";
+import EditEducation from "./EditEducation";
+import SkillItem from "./SkillItem";
+import EditSkill from "./EditSkill";
+import AddSkill from "./AddSkill";
 const UserInfo = () => {
+  const [AddSkillShowing, setAddSkillShowing] = useState(false);
   const [AddExShowing, setAddExShowing] = useState(false);
   const [AddeducateShowing, setAddeducateShowing] = useState(false);
+
   const [EditPersonalInfoShowing, setEditPersonalInfoShowing] = useState(false);
+
+  const [editSkillShowing, seteditSkillShowing] = useState(false);
+  const [editExperienceShowing, seteditExperienceShowing] = useState(false);
+  const [editEducationShowing, seteditEducationShowing] = useState(false);
+
+  const [selectedSkill, setselectedSkill] = useState({});
+  const [selectedEx, setselectedEx] = useState({});
+  const [selectedEd, setselectedEd] = useState({});
+  const onAddSkill = (newSkill) => {
+    setAddSkillShowing(false);
+    setSkills((prev) => {
+      return [
+        ...prev,
+        {
+          title: newSkill,
+          id: Math.floor(Math.random() * 10000) + 3,
+        },
+      ];
+    });
+  };
+  const onAddExperience = (newEx) => {
+    setAddExShowing(false);
+    setExperiences((prev) => {
+      return [
+        ...prev,
+        {
+          title: newEx.title,
+          company: newEx.company,
+          id: Math.floor(Math.random() * 10000) + 3,
+        },
+      ];
+    });
+  };
+  const onAddEducation = (newEducation) => {
+    setAddeducateShowing(false);
+    setEducations((prev) => {
+      return [
+        ...prev,
+        {
+          title: newEducation.title,
+          degree: newEducation.degree,
+          id: Math.floor(Math.random() * 10000) + 3,
+        },
+      ];
+    });
+  };
+  const onCancelAddSkill = (status) => {
+    setAddSkillShowing(status);
+  };
   const onCancelExperience = (status) => {
     setAddExShowing(status);
   };
@@ -21,10 +79,43 @@ const UserInfo = () => {
   const onCanclePersonalInfo = (status) => {
     setEditPersonalInfoShowing(status);
   };
+  const onEditSkill = (id) => {
+    setselectedSkill(
+      Skills.filter((skill) => {
+        return skill.id === id;
+      })[0]
+    );
+    seteditSkillShowing(true);
+  };
+  const onEditExperience = (id) => {
+    setselectedEx(
+      Experiences.filter((ex) => {
+        return ex.id === id;
+      })[0]
+    );
+    seteditExperienceShowing(true);
+  };
+  const onEditEducation = (id) => {
+    setselectedEd(
+      Educations.filter((ed) => {
+        return ed.id === id;
+      })[0]
+    );
+    seteditEducationShowing(true);
+  };
+  const onCancelEditSkill = (status) => {
+    seteditSkillShowing(status);
+  };
+  const onCancelEditExperience = (status) => {
+    seteditExperienceShowing(status);
+  };
+  const onCancelEditEducation = (status) => {
+    seteditEducationShowing(status);
+  };
 
   const [userInfo, setuserInfo] = useState({
-    fullName: "محمد مهدی گل محمدی",
     firstName: "محمد مهدی",
+    lastName: "گل محمدی",
     username: "Golimo99",
     password: "*******",
     nationalNumber: "--",
@@ -38,13 +129,64 @@ const UserInfo = () => {
     marialStatus: "مجرد",
     gender: "مرد",
   });
+  const [Experiences, setExperiences] = useState([
+    { title: "برنامه نویس ارشد جاوا", company: "اسنپ", id: 1 },
+    { title: "برنامه نویس ارشد جاوا", company: "دیجیکالا", id: 2 },
+    { title: "برنامه نویس ارشد جاوا", company: "ستون", id: 3 },
+  ]);
+  const [Educations, setEducations] = useState([
+    { title: "مهندسی کامپیوتر", degree: "کارشناسی", id: 1 },
+    { title: "Mba", degree: "کارشناسی ارشد", id: 2 },
+  ]);
+  const [Skills, setSkills] = useState([
+    { title: "توسعه دهنده فرانت اند", id: 1 },
+    { title: "توسعه دهنده بک اند", id: 2 },
+    { title: "توسعه دهنده هک اند", id: 3 },
+  ]);
   return (
     <React.Fragment>
       <div className="userinfo-cont">
-        {AddExShowing && <Addexperience cancel={onCancelExperience} />}
-        {AddeducateShowing && <Addeducate cancel={onCancelEducate} />}
+        {AddSkillShowing && (
+          <AddSkill add={onAddSkill} cancel={onCancelAddSkill} />
+        )}
+        {AddExShowing && (
+          <Addexperience add={onAddExperience} cancel={onCancelExperience} />
+        )}
+        {AddeducateShowing && (
+          <Addeducate add={onAddEducation} cancel={onCancelEducate} />
+        )}
+
         {EditPersonalInfoShowing && (
-          <EditPersonalInfo cancel={onCanclePersonalInfo} userInfo={userInfo} />
+          <EditPersonalInfo
+            cancel={onCanclePersonalInfo}
+            userInfo={userInfo}
+            setuserInfo={setuserInfo}
+          />
+        )}
+        {editSkillShowing && (
+          <EditSkill
+            skillInfo={selectedSkill}
+            skills={Skills}
+            setSkills={setSkills}
+            cancel={onCancelEditSkill}
+          />
+        )}
+        {editExperienceShowing && (
+          <EditExperience
+            exInfo={selectedEx}
+            cancel={onCancelEditExperience}
+            setEx={setExperiences}
+            ex={Experiences}
+          />
+        )}
+        {editEducationShowing && (
+          <EditEducation
+            edInfo={selectedEd}
+            edit={onEditExperience}
+            ed={Educations}
+            setEd={setEducations}
+            cancel={onCancelEditEducation}
+          />
         )}
         <div className="right-square-container userinfo">
           <img src={RightRectangle} alt="" />
@@ -62,13 +204,15 @@ const UserInfo = () => {
                     setEditPersonalInfoShowing(true);
                   }}
                 >
-                  ویرایش
+                  افزودن
                 </i>
               </header>
               <div className="profile">
                 <img src={UserProf} alt="" />
                 <div>
-                  <h4>{userInfo.fullName}</h4>
+                  <h4>
+                    {userInfo.firstName} {userInfo.lastName}
+                  </h4>
                   <p>--</p>
                 </div>
               </div>
@@ -124,21 +268,25 @@ const UserInfo = () => {
             <div className="skill">
               <header className="hs">
                 <h3>مهارت ها</h3>
-                <i onClick={() => {}}>ویرایش</i>
+                <i
+                  onClick={() => {
+                    setAddSkillShowing(true);
+                  }}
+                >
+                  افزودن
+                </i>
               </header>
               <ul dir="rtl">
-                <li>
-                  <p>توسعه دهنده فرانت اند</p>
-                  <img src={FileText} alt="" />
-                </li>
-                <li>
-                  <p>توسعه دهنده بک اند</p>
-                  <img src={FileText} alt="" />
-                </li>
-                <li>
-                  <p>امنیت شبکه</p>
-                  <img src={FileText} alt="" />
-                </li>
+                {Skills.map((skill) => {
+                  return (
+                    <SkillItem
+                      title={skill.title}
+                      key={skill.id}
+                      id={skill.id}
+                      edit={onEditSkill}
+                    />
+                  );
+                })}
               </ul>
             </div>
             <div className="experiences">
@@ -150,34 +298,21 @@ const UserInfo = () => {
                     console.log("hi");
                   }}
                 >
-                  ویرایش
+                  افزودن
                 </i>
               </header>
               <ul dir="rtl">
-                <li>
-                  <img src={SandBox} alt="" />
-                  <div>
-                    <h3>برنامه نویس ارشد جاوا</h3>
-                    <p>اسنپ</p>
-                  </div>
-                  <img src={FileText} alt="" />
-                </li>
-                <li>
-                  <img src={SandBox} alt="" />
-                  <div>
-                    <h3>برنامه نویس ارشد جاوا</h3>
-                    <p>اسنپ</p>
-                  </div>
-                  <img src={FileText} alt="" />
-                </li>
-                <li>
-                  <img src={SandBox} alt="" />
-                  <div>
-                    <h3>برنامه نویس ارشد جاوا</h3>
-                    <p>اسنپ</p>
-                  </div>
-                  <img src={FileText} alt="" />
-                </li>
+                {Experiences.map((ex) => {
+                  return (
+                    <ExperienceItem
+                      title={ex.title}
+                      company={ex.company}
+                      id={ex.id}
+                      key={ex.id}
+                      edit={onEditExperience}
+                    />
+                  );
+                })}
               </ul>
             </div>
             <div className="records">
@@ -188,18 +323,22 @@ const UserInfo = () => {
                     setAddeducateShowing(true);
                   }}
                 >
-                  ویرایش
+                  افزودن
                 </i>
               </header>
               <ul dir="rtl">
-                <li>
-                  <img src={SandBox} alt="" />
-                  <div>
-                    <h3>مهندسی کامپیوتر</h3>
-                    <p>کارشناسی</p>
-                  </div>
-                  <img src={FileText} alt="" />
-                </li>
+                {Educations.map((ed) => {
+                  return (
+                    <EducationItem
+                      title={ed.title}
+                      degree={ed.degree}
+                      key={ed.id}
+                      id={ed.id}
+                      edit={onEditEducation}
+                      cancel={onCancelEditEducation}
+                    />
+                  );
+                })}
               </ul>
             </div>
           </section>
