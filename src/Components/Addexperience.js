@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Addexperience.css";
 const Addexperience = (props) => {
+  const [title, settitle] = useState("");
+  const [company, setcompany] = useState("");
   return (
     <React.Fragment>
       <div className="addex-cont">
@@ -12,11 +14,23 @@ const Addexperience = (props) => {
             <div className="eDA">
               <div className="eD1 eD">
                 <p>عنوان(مثال : طراح گرافیک)</p>
-                <input type="text" />
+                <input
+                  value={title}
+                  onChange={(e) => {
+                    settitle(e.target.value);
+                  }}
+                  type="text"
+                />
               </div>
               <div className="eD2 eD">
                 <p>نام شرکت</p>
-                <input type="text" />
+                <input
+                  value={company}
+                  onChange={(e) => {
+                    setcompany(e.target.value);
+                  }}
+                  type="text"
+                />
               </div>
               <div className="nDi">
                 <p>اضافه کردن لوگوی شرکت</p>
@@ -96,7 +110,13 @@ const Addexperience = (props) => {
               <textarea className="eTAAT"></textarea>
             </div>
             <div className="buttonsFAS bFASAE" dir="ltr">
-              <input type="button" value="ذخیره" />
+              <input
+                onClick={() => {
+                  props.add({ title, company });
+                }}
+                type="button"
+                value="ذخیره"
+              />
               <input
                 type="button"
                 value="انصراف"
