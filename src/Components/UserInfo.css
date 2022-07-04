@@ -46,13 +46,12 @@ main {
   padding: 10px;
   width: -webkit-fill-available;
   position: sticky;
-  top: 60px;
 }
 .sec2 {
   box-sizing: border-box;
   padding: 10px;
   width: 60%;
-
+  position: relative;
   flex-grow: 1;
 }
 .sec1 i {
@@ -67,26 +66,26 @@ main {
   background-color: var(--color2);
   width: 100%;
 
-  border-radius: 40px;
+  border-radius: 53px;
   padding: 40px;
 }
 /* skill */
 .skill {
   background-color: var(--color2);
-  border-radius: 40px;
+  border-radius: 5.3rem;
   padding: 40px;
 }
 /* experiences */
 .experiences {
   background-color: var(--color2);
-  border-radius: 40px;
+  border-radius: 5.3rem;
   padding: 40px;
   margin: 15px 0 15px 0;
 }
 /* records */
 .records {
   background-color: var(--color2);
-  border-radius: 40px;
+  border-radius: 5.3rem;
   padding: 40px;
 }
 /* header section */
@@ -112,6 +111,12 @@ main {
   color: var(--colorg);
   font-style: normal;
 }
+.hpi h3 {
+  font-size: 1.675rem;
+}
+.hpi i {
+  font-weight: 400;
+}
 /* personal Information weight */
 .profile {
   display: flex;
@@ -134,12 +139,13 @@ main {
 }
 .grid1 p:nth-child(1) {
   margin: 10px 0;
-  color: var(--colorg);
-  font-size: 14px;
+  color: #757575;
+  font-size: 13px;
 }
 .grid1 p:nth-child(2) {
   color: var(--textColor);
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 16px;
 }
 .address {
   grid-column: 1/3;

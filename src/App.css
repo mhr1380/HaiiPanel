@@ -32,11 +32,21 @@ select {
 }
 @font-face {
   font-family: "iransans";
-  font-weight: 400;
+  font-weight: 500;
   src: url("./Components/assets/fonts/IRANSans-Medium-web.woff");
+}
+@font-face {
+  font-family: "iransans";
+  font-weight: 400;
+  src: url("./Components/assets/fonts/IRANSans-web.woff2");
 }
 @font-face {
   font-family: "iransans";
   font-weight: 200;
   src: url("./Components/assets/fonts/IRANSans-Light-web.woff");
+}
+@font-face {
+  font-family: "29ltazer";
+  src: url("./Components/./assets/fonts/29LTAzer-Regular.otf");
+  font-weight: 400;
 }

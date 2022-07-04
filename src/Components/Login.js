@@ -3,6 +3,9 @@ import "./Login.css";
 import Logo from "./assets/images/haii.png";
 import RightRectangle from "./assets/images/rightrec.png";
 import LeftRectangle from "./assets/images/leftrec.png";
+import user from "./assets/images/user.png";
+import key from "./assets/images/key.png";
+import eye from "./assets/images/eye.png";
 const Login = () => {
   return (
     <React.Fragment>
@@ -24,11 +27,18 @@ const Login = () => {
               <div className="form-container-inner">
                 <div className="login-input">
                   <input type="text" placeholder="نام کاربری" />
+                  <img src={user} alt="user-icon" />
                 </div>
                 <div className="login-input">
                   <input type="password" placeholder="رمز عبور" />
+                  <img src={key} alt="key-icon" />
+                  <img className="password-eye" src={eye} alt="eye-icon" />
                 </div>
-
+                {/* <div
+                  
+                  className="g-recaptcha"
+                  data-sitekey="your_site_key"
+                ></div> */}
                 <button className="login-btn">ورود</button>
               </div>
             </div>
