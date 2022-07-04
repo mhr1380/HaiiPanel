@@ -24,7 +24,7 @@ h6 {
 .userinfo-cont {
   background-color: var(--background);
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   direction: ltr;
   width: 100%;
   height: 100%;
@@ -34,7 +34,6 @@ h6 {
 /* main */
 main {
   display: flex;
-  height: 100vh;
   width: initial;
   margin: 50px 15%;
   flex-direction: row-reverse;
@@ -62,6 +61,7 @@ main {
 .sec2 i {
   font-family: "iransans";
 }
+
 /* Personal Information */
 .personalInformation {
   background-color: var(--color2);
@@ -158,7 +158,7 @@ main {
   margin-top: 20px;
 }
 .skill li img {
-  opacity: 0.7;
+  opacity: 1;
   width: 20px;
 }
 /* experiences and records weight  */
@@ -167,6 +167,7 @@ main {
   list-style: none;
   display: flex;
   margin-top: 5px;
+  align-items: center;
 }
 .experiences ul li img:nth-child(1),
 .records ul li img:nth-child(1) {
@@ -193,7 +194,7 @@ main {
 }
 .experiences ul li img:nth-child(3),
 .records ul li img:nth-child(3) {
-  opacity: 0.7;
+  opacity: 1;
   width: 20px;
 }
 /* Reactionism */
@@ -247,4 +248,33 @@ main {
   .sec1 {
     height: initial;
   }
+}
+.edit-img {
+  width: 15px;
+}
+.edit-img-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3px;
+}
+.edit-img-cont:hover {
+  cursor: pointer;
+}
+.edit-img-cont.flex-grow-none {
+  flex-grow: 0;
+}
+.receipt-edit-item {
+  width: 20px;
+  height: 22px;
+}
+.remove-img-cont {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: 3px;
+  margin-bottom: 20px;
+}
+.remove-img-cont:hover {
+  cursor: pointer;
 }

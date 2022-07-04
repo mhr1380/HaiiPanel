@@ -41,7 +41,6 @@
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
-  margin-bottom: 30px;
 }
 .editSkill .formEditSkill input[type="text"] {
   width: 50%;
@@ -55,7 +54,6 @@
   width: 100% !important;
 
   resize: none;
-  margin-bottom: 80px;
 }
 .buttonsFES input[type="button"] {
   border-radius: 40px;
@@ -82,8 +80,6 @@
   }
 }
 .deleteEditSkill {
-  margin-bottom: 20px;
-  color: #ff0000;
-  text-align: end;
+  color: #aa000f;
   display: block;
 }

@@ -15,6 +15,9 @@ import EditEducation from "./EditEducation";
 import SkillItem from "./SkillItem";
 import EditSkill from "./EditSkill";
 import AddSkill from "./AddSkill";
+import edit from "./assets/images/edit.png";
+import add_square from "./assets/images/add-square.png";
+
 const UserInfo = () => {
   const [AddSkillShowing, setAddSkillShowing] = useState(false);
   const [AddExShowing, setAddExShowing] = useState(false);
@@ -199,13 +202,15 @@ const UserInfo = () => {
             <div className="personalInformation">
               <header className="hpi">
                 <h3>اطلاعات فردی</h3>
-                <i
+                <div
                   onClick={() => {
                     setEditPersonalInfoShowing(true);
                   }}
+                  className="edit-img-cont"
                 >
-                  افزودن
-                </i>
+                  <i>ویرایش</i>
+                  <img src={edit} className="edit-img" />
+                </div>
               </header>
               <div className="profile">
                 <img src={UserProf} alt="" />
@@ -213,7 +218,7 @@ const UserInfo = () => {
                   <h4>
                     {userInfo.firstName} {userInfo.lastName}
                   </h4>
-                  <p>--</p>
+                  <p>{userInfo.subject}</p>
                 </div>
               </div>
               <div className="grid1" dir="rtl">
@@ -268,13 +273,16 @@ const UserInfo = () => {
             <div className="skill">
               <header className="hs">
                 <h3>مهارت ها</h3>
-                <i
-                  onClick={() => {
-                    setAddSkillShowing(true);
-                  }}
-                >
-                  افزودن
-                </i>
+                <div className="edit-img-cont">
+                  <i
+                    onClick={() => {
+                      setAddSkillShowing(true);
+                    }}
+                  >
+                    افزودن
+                  </i>
+                  <img src={add_square} className="edit-img" />
+                </div>
               </header>
               <ul dir="rtl">
                 {Skills.map((skill) => {
@@ -291,15 +299,16 @@ const UserInfo = () => {
             </div>
             <div className="experiences">
               <header className="he">
-                <h3>تجربه ها</h3>
-                <i
+                <h3 className="flex-grow-none">تجربه ها</h3>
+                <div
                   onClick={() => {
                     setAddExShowing(true);
-                    console.log("hi");
                   }}
+                  className="edit-img-cont flex-grow-none"
                 >
-                  افزودن
-                </i>
+                  <i>افزودن</i>
+                  <img src={add_square} className="edit-img" />
+                </div>
               </header>
               <ul dir="rtl">
                 {Experiences.map((ex) => {
@@ -318,13 +327,15 @@ const UserInfo = () => {
             <div className="records">
               <header className="hr">
                 <h3>سوابق تحصیلی</h3>
-                <i
+                <div
                   onClick={() => {
                     setAddeducateShowing(true);
                   }}
+                  className="edit-img-cont flex-grow-none"
                 >
-                  افزودن
-                </i>
+                  <i>افزودن</i>
+                  <img src={add_square} className="edit-img" />
+                </div>
               </header>
               <ul dir="rtl">
                 {Educations.map((ed) => {

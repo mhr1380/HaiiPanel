@@ -1,6 +1,8 @@
 import React from "react";
 import "./Addexperience.css";
 import { useState } from "react";
+import note_remove from "./assets/images/note-remove.png";
+
 const EditExperience = (props) => {
   const [title, settitle] = useState(props.exInfo.title);
   const [company, setcompany] = useState(props.exInfo.company);
@@ -127,14 +129,17 @@ const EditExperience = (props) => {
               <p>توضیحات</p>
               <textarea className="eTAAT"></textarea>
             </div>
-            <i
-              onClick={() => {
-                onDeleteExperienceHandler(props.exInfo.id);
-              }}
-              className="fa fa-times deleteEditSkill"
-            >
-              حذف مهارت
-            </i>
+            <div className="remove-img-cont">
+              <i
+                onClick={() => {
+                  onDeleteExperienceHandler(props.exInfo.id);
+                }}
+                className="fa fa-times deleteEditSkill"
+              >
+                حذف مهارت
+              </i>
+              <img src={note_remove} className="edit-img" />
+            </div>
             <div className="buttonsFAS bFASAE" dir="ltr">
               <input onClick={onSave} type="button" value="ذخیره" />
               <input

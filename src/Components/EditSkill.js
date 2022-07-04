@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import note_remove from "./assets/images/note-remove.png";
+
 import "./EditSkill.css";
 const EditSkill = (props) => {
   const [title, settitle] = useState(props.skillInfo.title);
@@ -38,14 +40,17 @@ const EditSkill = (props) => {
             />
             <p>توضیحات</p>
             <textarea></textarea>
-            <i
-              onClick={() => {
-                onDeleteSkillHandler(props.skillInfo.id);
-              }}
-              className="fa fa-times deleteEditSkill"
-            >
-              حذف مهارت
-            </i>
+            <div className="remove-img-cont">
+              <i
+                onClick={() => {
+                  onDeleteSkillHandler(props.skillInfo.id);
+                }}
+                className="fa fa-times deleteEditSkill"
+              >
+                حذف مهارت
+              </i>
+              <img src={note_remove} className="edit-img" />
+            </div>
             <div className="buttonsFES" dir="ltr">
               <input onClick={onSaveHandler} type="button" value="ذخیره" />
               <input

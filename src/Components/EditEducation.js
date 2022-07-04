@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import note_remove from "./assets/images/note-remove.png";
+import add_square from "./assets/images/add-square.png";
+
 const EditEducation = (props) => {
   const [title, settitle] = useState(props.edInfo.title);
   const [degree, setdegree] = useState(props.edInfo.degree);
@@ -95,14 +98,18 @@ const EditEducation = (props) => {
               <p>توصیحات</p>
               <input type="text" />
             </div>
-            <i
-              onClick={() => {
-                onDeleteEducationHandler(props.edInfo.id);
-              }}
-              className="fa fa-times deleteEditSkill"
-            >
-              حذف مهارت
-            </i>
+            <div className="remove-img-cont">
+              <i
+                onClick={() => {
+                  onDeleteEducationHandler(props.edInfo.id);
+                }}
+                className="fa fa-times deleteEditSkill"
+              >
+                حذف مهارت
+              </i>
+
+              <img src={note_remove} className="edit-img" />
+            </div>
             <div className="buttonsFAS bFASAE" dir="ltr">
               <input onClick={onSave} type="button" value="ذخیره" />
               <input

@@ -1,16 +1,16 @@
 import React from "react";
-import FileText from "./assets/images/file-text.svg";
-
+import receipt_edit from "./assets/images/receipt-edit.png";
 const SkillItem = (props) => {
   return (
     <React.Fragment>
       <li>
         <p>{props.title}</p>
         <img
+          className="receipt-edit-item"
           onClick={() => {
             props.edit(props.id);
           }}
-          src={FileText}
+          src={receipt_edit}
           alt=""
         />
       </li>

@@ -1,6 +1,7 @@
 import React from "react";
 import SandBox from "./assets/images/codesandbox.png";
-import FileText from "./assets/images/file-text.svg";
+import receipt_edit from "./assets/images/receipt-edit.png";
+
 const EducationItem = (props) => {
   return (
     <React.Fragment>
@@ -11,8 +12,9 @@ const EducationItem = (props) => {
           <p>{props.degree}</p>
         </div>
         <img
-          src={FileText}
+          src={receipt_edit}
           alt=""
+          className="receipt-edit-item"
           onClick={() => {
             props.edit(props.id);
           }}

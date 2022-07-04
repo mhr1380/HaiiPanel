@@ -2,7 +2,11 @@ import "./EditPersonalInfo.css";
 import UserProf from "./assets/images/useprof.png";
 import { useRef } from "react";
 import { useState } from "react";
+import camera from "./assets/images/camera.png";
 import userEvent from "@testing-library/user-event";
+import { DatePicker } from "jalali-react-datepicker";
+import React from "react";
+
 const EditPersonalInfo = (props) => {
   const [firstName, setfirstName] = useState(props.userInfo.firstName);
   const [lastName, setlastName] = useState(props.userInfo.lastName);
@@ -26,7 +30,12 @@ const EditPersonalInfo = (props) => {
         <header className="headerEditInfo">
           <p>ویرایش اطلاعات فردی</p>
         </header>
-        <img src={UserProf} alt="" className="editInfoProfile" />
+        <div className="prof-cont">
+          <img src={UserProf} alt="" className="editInfoProfile" />
+          <div className="hover-effect">
+            <img src={camera} className="inner-camera" />
+          </div>
+        </div>
         <div className="gridEditInfo">
           <div className="itemGridEditInfo ItemGridEditInfoName">
             <p>نام</p>
@@ -78,6 +87,7 @@ const EditPersonalInfo = (props) => {
               type="text"
             />
           </div>
+          <DatePicker />
           <div className="itemGridEditInfo ItemGridEditInfoBirth">
             <p>تاریخ تولد</p>
             <input

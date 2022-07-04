@@ -1,6 +1,8 @@
 import React from "react";
 import FileText from "./assets/images/file-text.svg";
 import SandBox from "./assets/images/codesandbox.png";
+import receipt_edit from "./assets/images/receipt-edit.png";
+
 import "./ExperienceItem.css";
 const ExperienceItem = (props) => {
   return (
@@ -12,10 +14,11 @@ const ExperienceItem = (props) => {
           <p>{props.company}</p>
         </div>
         <img
+          className="receipt-edit-item"
           onClick={() => {
             props.edit(props.id);
           }}
-          src={FileText}
+          src={receipt_edit}
           alt=""
         />
       </li>
